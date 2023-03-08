@@ -5,8 +5,7 @@
 <div class="user-detail">
   <% unless current_user == @user %>
     <%= render "users/follow_toggle", user: @user %>
-    <div data-user-id="<%= @user.id%>"
-    data-follow-state="<%= is_following ? "followed!" : "not-followed!" %>">
+    
 
 </div>
   <% end %>
