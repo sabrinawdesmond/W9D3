@@ -20,6 +20,11 @@ export default class FollowToggle {
     // Your code here
     event.preventDefault()
     console.log(this.followState)
+    if (this.followState === 'followed') {
+      this.unfollow()
+    } else {
+      this.follow()
+    }
     
   }
 
