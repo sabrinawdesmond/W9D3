@@ -1,8 +1,14 @@
+<% is_following = current_user.follows?(@user) %>
+
 <h2 class="page-header"><%= @user.username %></h2>
 
 <div class="user-detail">
   <% unless current_user == @user %>
     <%= render "users/follow_toggle", user: @user %>
+    <div data-user-id="<%= @user.id%>"
+    data-follow-state="<%= is_following ? "followed!" : "not-followed!" %>">
+
+</div>
   <% end %>
 
   <article class="left-half">
@@ -45,3 +51,4 @@
     </ul>
   </aside>
 </div>
+
