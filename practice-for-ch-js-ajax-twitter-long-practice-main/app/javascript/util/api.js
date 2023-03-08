@@ -14,9 +14,23 @@ async function customFetch(url, options = {}) {
 
 export function followUser(id) {
   return customFetch(`/users/${id}/follow`, {method: "POST"})
+  .then (res=>{
+    if (res.ok){
+      return res.json()
+    }else{
+      throw res 
+    }
+  })
 }
 
 export function unfollowUser(id) {
   return customFetch(`/users/${id}/follow`, {method: "DELETE"})
+  .then (res=>{
+    if (res.ok){
+      return res.json()
+    }else{
+      throw res 
+    }
+  })
 }
 
